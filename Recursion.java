@@ -1,19 +1,23 @@
+// Working on x^n  when Stack Heigt is = logn 
 
-// Working on x^n 
 public class Recursion {
 
     public static int calculateX(int x, int n) {
-if(n==0){  //base case 1
-    return 1;
-}
-if(x==1){ //base case 2
-    return 1;
-}
+        if (n == 0) {  //base case 1
+            return 1;
+        }
+        if (x == 1) { //base case 2
+            return 1;
+        }
 
+        if(n%2 == 0){
+            // Even Case 
+            return calculateX(x, n/2) * calculateX(x, n/2);
+        }
+        else {
+            return calculateX(x, n/2) * calculateX(x, n/2) * x ;
+        }
 
-int XPowerNminusOne = calculateX(x, n-1); //kaaj
-int xPower = x * XPowerNminusOne;
-return xPower;
     }
 
     public static void main(String[] args) {
@@ -24,6 +28,26 @@ return xPower;
     }
 }
 
+// Working on x^n 
+// public class Recursion {
+//     public static int calculateX(int x, int n) {
+// if(n==0){  //base case 1
+//     return 1;
+// }
+// if(x==1){ //base case 2
+//     return 1;
+// }
+// int XPowerNminusOne = calculateX(x, n-1); //kaaj
+// int xPower = x * XPowerNminusOne;
+// return xPower;
+//     }
+//     public static void main(String[] args) {
+//         int x = 2;
+//         int n = 5;
+//         int ans = calculateX(x, n);
+//         System.out.println(ans);
+//     }
+// }
 // Fibonacci Series Using Recursion 
 // public class Recursion {
 //     public static void Fibo(int a, int b, int n) {
